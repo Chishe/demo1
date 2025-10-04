@@ -1,0 +1,486 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-content {
+  visibility: hidden;
+  width: max-content;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Tooltip position: left */
+.tooltip-content.left {
+  top: 50%;
+  right: 105%;
+  transform: translateY(-50%);
+}
+
+.tooltip-content.left::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent rgba(0, 0, 0, 0.85) transparent transparent;
+}
+
+.tooltip-container:hover .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+.btn-img {
+  width: 25px;
+  height: 25px;
+}
+.hover-zoom {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.1);
+  background-color: #28a745cc;
+}
+.parent,
+.parent1,
+.parent2,
+.parent8,
+.parent9,
+.parent11,
+.parent12 {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.parent {
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  height: calc(100vh - 85px);
+  justify-content: center;
+}
+
+.parent1 {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.parent2 {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+.parent8 {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+.parent9 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+}
+.parent11 {
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+.parent12 {
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
+.div1 {
+  grid-column: span 3;
+  grid-column: span 3 / span 3;
+  grid-row: span 9 / span 9;
+}
+
+.div2 {
+  grid-column: span 6 / span 6;
+  grid-column-start: 4;
+  padding: 10px;
+}
+
+.div3 {
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+  grid-column-start: 4;
+  grid-row-start: 2;
+  padding: 10px;
+}
+
+.div4 {
+  grid-column: span 2 / span 2;
+  grid-row: span 3 / span 3;
+  grid-column-start: 6;
+  grid-row-start: 2;
+  padding: 10px;
+}
+
+.div5 {
+  grid-column: span 2 / span 2;
+  grid-row: span 3 / span 3;
+  grid-column-start: 8;
+  grid-row-start: 2;
+  padding: 10px;
+}
+
+.div6 {
+  grid-row: span 7 / span 7;
+  grid-column-start: 10;
+  grid-row-start: 2;
+  padding: 10px;
+}
+
+.div7 {
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+  grid-column-start: 4;
+  grid-row-start: 4;
+  padding: 10px;
+}
+
+.div8 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 6;
+  grid-row-start: 5;
+  padding: 10px;
+}
+
+.div9 {
+  grid-column: span 2 / span 2;
+  grid-row: span 3 / span 3;
+  grid-column-start: 8;
+  grid-row-start: 5;
+  padding: 10px;
+}
+
+.div10 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 4;
+  grid-row-start: 6;
+  padding: 10px;
+}
+
+.div11 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 6;
+  grid-row-start: 6;
+  padding: 10px;
+}
+
+.div12 {
+  grid-column: span 2 / span 2;
+  grid-row: span 3 / span 3;
+  grid-column-start: 4;
+  grid-row-start: 7;
+  padding: 10px;
+}
+
+.div13 {
+  grid-column: span 2 / span 2;
+  grid-row: span 3 / span 3;
+  grid-column-start: 6;
+  grid-row-start: 7;
+  padding: 10px;
+}
+
+.div14 {
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+  grid-column-start: 8;
+  grid-row-start: 8;
+  padding: 10px;
+}
+
+.div1-1 {
+  grid-column: span 2 / span 2;
+}
+
+.div1-2 {
+  grid-column-start: 3;
+}
+
+.div1-3 {
+  grid-column: span 2 / span 2;
+  grid-column-start: 4;
+}
+
+.div1-4 {
+  grid-row-start: 2;
+}
+
+.div1-5 {
+  grid-row-start: 2;
+}
+
+.div1-6 {
+  grid-row-start: 2;
+}
+
+.div1-7 {
+  grid-row-start: 2;
+}
+
+.div1-8 {
+  grid-row-start: 2;
+}
+
+.div2-1 {
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+}
+
+.div2-2 {
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+}
+
+.div2-3 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 4;
+  grid-row-start: 3;
+}
+
+.div2-4 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+  grid-row-start: 5;
+}
+
+.div2-5 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 4;
+  grid-row-start: 5;
+}
+
+.div2-6 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 2;
+  grid-row-start: 5;
+}
+
+.div2-7 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+.div2-8 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+.div2-9 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+  grid-row-start: 7;
+}
+
+.div2-10 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 4;
+  grid-row-start: 7;
+}
+
+.div2-11 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 7;
+}
+
+.div9-1 {
+  grid-row: span 2 / span 2;
+}
+
+.div9-2 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+.div9-3 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+.div9-4 {
+  grid-column-start: 1;
+  grid-row-start: 7;
+}
+
+.div9-5 {
+  grid-column-start: 1;
+  grid-row-start: 8;
+}
+
+.div9-6 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 9;
+}
+
+.div9-7 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 11;
+}
+
+.div9-8 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.div9-9 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+
+.div9-10 {
+  grid-row: span 6 / span 6;
+  grid-column-start: 2;
+  grid-row-start: 5;
+}
+
+.div12-1 {
+  grid-column: span 6 / span 6;
+  grid-row: span 5 / span 5;
+}
+
+.div12-2 {
+  grid-row: span 5 / span 5;
+  grid-row-start: 6;
+}
+
+.div12-3 {
+  grid-row: span 5 / span 5;
+  grid-row-start: 6;
+}
+
+.div12-4 {
+  grid-row: span 5 / span 5;
+  grid-row-start: 6;
+}
+
+.div12-5 {
+  grid-row: span 5 / span 5;
+  grid-row-start: 6;
+}
+
+.div12-6 {
+  grid-row: span 5 / span 5;
+  grid-row-start: 6;
+}
+
+.div12-7 {
+  grid-row: span 5 / span 5;
+  grid-row-start: 6;
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------- */
+
+.tooltip-container-dashboard {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-content-dashboard {
+  visibility: hidden;
+  width: max-content;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-content-dashboard.top {
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip-content-dashboard.top::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.85) transparent transparent transparent;
+}
+
+.tooltip-container-dashboard.show-tooltip-dashboard .tooltip-content-dashboard {
+  visibility: visible;
+  opacity: 1;
+}
+
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #4caf50 50%, #81c784 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
+.content {
+  border-radius: 0.25em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  text-align: center;
+  width: 500px;
+  max-width: 95%;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
